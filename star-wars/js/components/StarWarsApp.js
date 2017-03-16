@@ -89,6 +89,11 @@ class StarWarsApp extends React.Component {
 
 export default Relay.createContainer(StarWarsApp, {
   fragments: {
+    test: () => Relay.QL`
+      fragment on Faction {
+        id
+      }
+    `,
     factions: () => Relay.QL`
       fragment on Faction @relay(plural: true) {
         id,

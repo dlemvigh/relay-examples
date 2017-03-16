@@ -239,6 +239,10 @@ const queryType = new GraphQLObjectType({
       },
       resolve: (root, {names}) => getFactions(names),
     },
+    test: {
+      type: factionType,
+      resolve: () => { throw "error" }
+    },
     node: nodeField,
   }),
 });
